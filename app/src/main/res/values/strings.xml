@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">On Demand Loading Test</string>
+    <string name="title_pictures">Pictures</string>
+    <string name="pictures_feature">Pictures feature</string>
+
+
+    <string name="module_pictures">pictures</string>
+</resources>
