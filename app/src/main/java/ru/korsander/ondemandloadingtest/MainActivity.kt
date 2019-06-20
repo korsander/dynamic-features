@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import com.google.android.play.core.splitinstall.SplitInstallManager
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
+import com.google.android.play.core.splitinstall.SplitInstallRequest
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,6 +32,15 @@ class MainActivity : AppCompatActivity() {
             launchActivity("ru.korsander.pictures.PictureActivity")
         } else {
             toastAndLog("The pictures module is not installed")
+
+            val request = SplitInstallRequest.newBuilder()
+                .addModule(modulePictures)
+                .build()
+
+            manager.startInstall(request)
+                .addOnCompleteListener { toastAndLog("Module $modulePictures installed") }
+                .addOnSuccessListener { toastAndLog("Loading $modulePictures") }
+                .addOnFailureListener { toastAndLog("Error Loading $modulePictures") }
         }
     }
 
