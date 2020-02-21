@@ -1,7 +1,7 @@
 package ru.korsander.ondemandloadingtest.pictures
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.play.core.splitcompat.SplitCompat
 import com.synnapps.carouselview.CarouselView
 
